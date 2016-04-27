@@ -22,7 +22,7 @@ build = {
 
     modules = {
         ['pinba.lib'] = {
-            sources = 'pinba/lib.c pinba/pinba.pb-c.c pinba/protobuf-c.c',
+            sources = { 'pinba/lib.c', 'pinba/pinba.pb-c.c', 'pinba/protobuf-c.c' },
             incdirs = {
                 "$(TARANTOOL_INCDIR)"
             }
