@@ -197,7 +197,7 @@ static int lbox_pinba_send(struct lua_State *L) /* {{{ */
 	if (!server_host || server_host[0] == '\0') {
 		return luaL_error(L, "Pinba server host cannot be empty");
 	}
-	
+
 	server_port = luaL_optint(L, 2, 0);
 	if (server_port <= 0) {
 		return luaL_error(L, "Pinba server port must be greater than 0");
@@ -284,7 +284,7 @@ static int lbox_pinba_send(struct lua_State *L) /* {{{ */
 			request->ru_utime = double_value;
 		}
 		lua_pop(L, 1);
-		
+
 		lua_getfield(L, 3, "ru_stime");
 		double_value = luaL_checknumber(L, -1);
 		if (double_value > 0) {
@@ -321,7 +321,7 @@ static int lbox_pinba_send(struct lua_State *L) /* {{{ */
 
 LUA_API int luaopen_pinba_lib(lua_State *L) /* {{{ */
 {
-	static const struct luaL_reg reg[] = {
+	static const struct luaL_Reg reg[] = {
 		{"send", lbox_pinba_send},
 		{NULL, NULL}
 	};
